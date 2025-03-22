@@ -26,10 +26,6 @@
             bun
           ];
 
-          buildPhase = ''
-            bun build ./src/main.ts --outfile=dist/cspell-lsp.js --target=node
-          '';
-
           installPhase = ''
             mkdir -p $out/bin
             sed -i "1s|^#!.*$|#!${pkgs.nodejs}/bin/node|" dist/cspell-lsp.js
